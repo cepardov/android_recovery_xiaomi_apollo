@@ -21,7 +21,7 @@ DEVICE_PATH := device/xiaomi/apollo
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_minimal.mk)
 
 # Inherit from our custom product configuration
-$(call inherit-product, vendor/omni/config/common.mk)
+$(call inherit-product, vendor/twrp/config/common.mk)
 
 
 ## Device identifier. This must come after all inclusions
