@@ -59,7 +59,7 @@ Finally execute these:
 . build/envsetup.sh
 lunch omni_apollo-eng
 export ALLOW_MISSING_DEPENDENCIES=true # Only if you use minimal twrp tree.
-mka recoveryimage 
+mka recoveryimage -j$(nproc --all)
 ```
 
 To test it:
