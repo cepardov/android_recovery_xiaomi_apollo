@@ -35,7 +35,12 @@ PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.build.security_patch=2099-12-31
 
-
-PRODUCT_PACKAGES += fastbootd
+PRODUCT_PACKAGES += \
+    bootctrl.xiaomi_sm8250 \
+    bootctrl.xiaomi_sm8250.recovery \
+    android.hardware.boot@1.0-service \
+    android.hardware.boot@1.0-impl \
+    android.hardware.boot@1.0-impl.recovery \
+    fastbootd
 #PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/root,recovery/root)
 
