@@ -23,45 +23,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_minimal.mk)
 # Inherit from our custom product configuration
 #$(call inherit-product, vendor/twrp/config/common.mk)
 
+# Inherit from hardware-specific part of the product configuration
+$(call inherit-product, $(DEVICE_PATH)/device.mk)
+
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := apollo
+PRODUCT_DEVICE := umi
 PRODUCT_NAME := twrp_apollo
 PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := M2007J3SG
+PRODUCT_MODEL := Redmi K30S Ultra
 PRODUCT_MANUFACTURER := Xiaomi
-
-PRODUCT_PACKAGES += \
-    bootctrl.xiaomi_sm8250 \
-    bootctrl.xiaomi_sm8250.recovery \
-    android.hardware.boot@1.0-service \
-    android.hardware.boot@1.0-impl \
-    android.hardware.boot@1.0-impl.recovery \
-    fastbootd
-
-PRODUCT_HOST_PACKAGES += \
-    libandroidicu
-
-# SHIPPING API
-PRODUCT_SHIPPING_API_LEVEL := 29
-# VNDK API
-PRODUCT_TARGET_VNDK_VERSION := 30
-
-# Soong namespaces
-PRODUCT_SOONG_NAMESPACES += \
-    $(DEVICE_PATH)
-
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
-
-# otacert
-PRODUCT_EXTRA_RECOVERY_KEYS += \
-    $(DEVICE_PATH)/security/magisk \
-    $(DEVICE_PATH)/security/miui_releasekey
-
-# PRODUCT_RELEASE_NAME ro.twrp.device.name
-PRODUCT_PROPERTY_OVERRIDES += ro.twrp.device.name=$(PRODUCT_RELEASE_NAME)
-
-PRODUCT_COPY_FILES += \
-    $(OUT_DIR)/target/product/umi/obj/SHARED_LIBRARIES/libandroidicu_intermediates/libandroidicu.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/libandroidicu.so \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/prebuilt/$(PRODUCT_RELEASE_NAME)/modules,$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules) \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/prebuilt/$(PRODUCT_RELEASE_NAME)/firmware,$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware)
 
