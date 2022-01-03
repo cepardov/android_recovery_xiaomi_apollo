@@ -16,7 +16,7 @@
 
 # Release name
 PRODUCT_RELEASE_NAME := apollo
-DEVICE_PATH := device/xiaomi/umi
+DEVICE_PATH := device/xiaomi/apollo
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_minimal.mk)
 
