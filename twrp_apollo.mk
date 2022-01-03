@@ -16,7 +16,7 @@
 
 # Release name
 PRODUCT_RELEASE_NAME := apollo
-DEVICE_PATH := device/xiaomi/umi
+DEVICE_PATH := device/xiaomi/apollo
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_minimal.mk)
 
@@ -27,9 +27,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_minimal.mk)
 $(call inherit-product, $(DEVICE_PATH)/device.mk)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := umi
+PRODUCT_DEVICE := apollo
 PRODUCT_NAME := twrp_apollo
 PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := M2007J3SG
+PRODUCT_MODEL := M2007J3SY
 PRODUCT_MANUFACTURER := Xiaomi
 
