@@ -51,6 +51,7 @@ Then add these projects to .repo/manifest.xml:
 
 ```xml
 <project path="device/xiaomi/apollo" name="cepardov/android_recovery_xiaomi_apollo" remote="github" revision="android-12.0" />
+
 ```
 
 Finally execute these:
